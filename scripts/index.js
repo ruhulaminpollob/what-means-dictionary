@@ -8,7 +8,7 @@ const loadMeaning = (word) => {
             if (data.title==="No Definitions Found") {
                  alert(data.message)
             } else {
-                
+                displayMeaning(data)
             }
         });
     }else{
@@ -18,6 +18,23 @@ const loadMeaning = (word) => {
 
 }
 
+const displayMeaning=(wordInfo)=>{
+    wordInfo[0].phonetics.forEach(element => {
+        const audioResult=document.getElementById('audio-result');
+        console.log(element.audio);
+        const audio=document.createElement('audio');
+        audio.src=element.audio
+        const audioPlayBtn=document.createElement('button');
+        audioPlayBtn.innerText='Play'
+        audioPlayBtn.onclick=()=>audio.play()
+        audioResult.appendChild(audio)
+        audioResult.appendChild(audioPlayBtn)
+        
+        // console.log(audio);
+
+    });
+    // console.log(wordInfo[0].phonetics);
+}
 
 
 
