@@ -68,3 +68,4 @@ const searchInputFiled = document.getElementById('search-input-filed').addEventL
         loadMeaning(searchInputFiled)
     }
 })
+
